@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Reversi", "Reversi\Reversi.vcxproj", "{E73771A8-9A70-456C-9873-3FD1B99FAEC9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestReversi", "TestReversi\TestReversi.vcxproj", "{2B42F979-0FC7-4760-84EF-CAAA26AF2DBF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReversiLib", "ReversiLib\ReversiLib.vcxproj", "{959D9370-6030-4777-ADA3-10E6CC3AAC4D}"
+EndProject
+Global
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E73771A8-9A70-456C-9873-3FD1B99FAEC9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E73771A8-9A70-456C-9873-3FD1B99FAEC9}.Debug|Win32.Build.0 = Debug|Win32
+		{E73771A8-9A70-456C-9873-3FD1B99FAEC9}.Release|Win32.ActiveCfg = Release|Win32
+		{E73771A8-9A70-456C-9873-3FD1B99FAEC9}.Release|Win32.Build.0 = Release|Win32
+		{2B42F979-0FC7-4760-84EF-CAAA26AF2DBF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2B42F979-0FC7-4760-84EF-CAAA26AF2DBF}.Debug|Win32.Build.0 = Debug|Win32
+		{2B42F979-0FC7-4760-84EF-CAAA26AF2DBF}.Release|Win32.ActiveCfg = Release|Win32
+		{2B42F979-0FC7-4760-84EF-CAAA26AF2DBF}.Release|Win32.Build.0 = Release|Win32
+		{959D9370-6030-4777-ADA3-10E6CC3AAC4D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{959D9370-6030-4777-ADA3-10E6CC3AAC4D}.Debug|Win32.Build.0 = Debug|Win32
+		{959D9370-6030-4777-ADA3-10E6CC3AAC4D}.Release|Win32.ActiveCfg = Release|Win32
+		{959D9370-6030-4777-ADA3-10E6CC3AAC4D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
