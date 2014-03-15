@@ -6,88 +6,79 @@
 
 TEST(TestChessBoard, getLeftPosTest)
 {
-	ChessBoard board;
-	ASSERT_EQ("XX", board.getLeftPos("A1"));
-	ASSERT_EQ("A1", board.getLeftPos("B1"));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("A1", LEFT));
+	ASSERT_EQ("A1", ChessBoard::getInstance().getPos("B1", LEFT));
 }
 
 TEST(TestChessBoard, getRightPosTest)
 {
-	ChessBoard board;
-	ASSERT_EQ("XX", board.getRightPos("H1"));
-	ASSERT_EQ("H1", board.getRightPos("G1"));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("H1", RIGHT));
+	ASSERT_EQ("H1", ChessBoard::getInstance().getPos("G1", RIGHT));
 }
 TEST(TestChessBoard, getUpPosTest)
 {
-	ChessBoard board;
-	ASSERT_EQ("XX", board.getUpPos("H1"));
-	ASSERT_EQ("G1", board.getUpPos("G2"));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("H1", UP));
+	ASSERT_EQ("G1", ChessBoard::getInstance().getPos("G2", UP));
 }
 
 TEST(TestChessBoard, getDownPosTest)
 {
-	ChessBoard board;
-	ASSERT_EQ("XX", board.getDownPos("H8"));
-	ASSERT_EQ("H8", board.getDownPos("H7"));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("H8", DOWN));
+	ASSERT_EQ("H8", ChessBoard::getInstance().getPos("H7", DOWN));
 }
 
 TEST(TestChessBoard, getLeftUpPosTest)
 {
-	ChessBoard board;
-	ASSERT_EQ("XX", board.getLeftUpPos("A1"));
-	ASSERT_EQ("XX", board.getLeftUpPos("A2"));
-	ASSERT_EQ("XX", board.getLeftUpPos("B1"));
-	ASSERT_EQ("A1", board.getLeftUpPos("B2"));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("A1", LEFT_UP));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("A2", LEFT_UP));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("B1", LEFT_UP));
+	ASSERT_EQ("A1", ChessBoard::getInstance().getPos("B2", LEFT_UP));
 }
 
 TEST(TestChessBoard, getRightUpPosTest)
 {
-	ChessBoard board;
-	ASSERT_EQ("XX", board.getRightUpPos("H1"));
-	ASSERT_EQ("XX", board.getRightUpPos("H2"));
-	ASSERT_EQ("XX", board.getRightUpPos("G1"));
-	ASSERT_EQ("H1", board.getRightUpPos("G2"));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("H1", RIGHT_UP));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("H2", RIGHT_UP));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("G1", RIGHT_UP));
+	ASSERT_EQ("H1", ChessBoard::getInstance().getPos("G2", RIGHT_UP));
 
-	ASSERT_EQ("B7", board.getRightUpPos("A8"));
-	ASSERT_EQ("B6", board.getRightUpPos("A7"));
-	ASSERT_EQ("C7", board.getRightUpPos("B8"));
-	ASSERT_EQ("C6", board.getRightUpPos("B7"));
+	ASSERT_EQ("B7", ChessBoard::getInstance().getPos("A8", RIGHT_UP));
+	ASSERT_EQ("B6", ChessBoard::getInstance().getPos("A7", RIGHT_UP));
+	ASSERT_EQ("C7", ChessBoard::getInstance().getPos("B8", RIGHT_UP));
+	ASSERT_EQ("C6", ChessBoard::getInstance().getPos("B7", RIGHT_UP));
 }
 
 TEST(TestChessBoard, getLeftDownPosTest)
 {
-	ChessBoard board;
-	ASSERT_EQ("XX", board.getLeftDownPos("A8"));
-	ASSERT_EQ("XX", board.getLeftDownPos("A1"));
-	ASSERT_EQ("XX", board.getLeftDownPos("B8"));
-	ASSERT_EQ("XX", board.getLeftDownPos("G8"));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("A8", LEFT_DOWN));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("A1", LEFT_DOWN));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("B8", LEFT_DOWN));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("G8", LEFT_DOWN));
 
-	ASSERT_EQ("XX", board.getLeftDownPos("H8"));
-	ASSERT_EQ("F8", board.getLeftDownPos("G7"));
-	ASSERT_EQ("A3", board.getLeftDownPos("B2"));
-	ASSERT_EQ("G8", board.getLeftDownPos("H7"));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("H8", LEFT_DOWN));
+	ASSERT_EQ("F8", ChessBoard::getInstance().getPos("G7", LEFT_DOWN));
+	ASSERT_EQ("A3", ChessBoard::getInstance().getPos("B2", LEFT_DOWN));
+	ASSERT_EQ("G8", ChessBoard::getInstance().getPos("H7", LEFT_DOWN));
 }
 
 TEST(TestChessBoard, getRightDownPosTest)
 {
-	ChessBoard board;
-	ASSERT_EQ("XX", board.getRightDownPos("H8"));
-	ASSERT_EQ("XX", board.getRightDownPos("H7"));
-	ASSERT_EQ("XX", board.getRightDownPos("G8"));
-	ASSERT_EQ("H8", board.getRightDownPos("G7"));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("H8", RIGHT_DOWN));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("H7", RIGHT_DOWN));
+	ASSERT_EQ("XX", ChessBoard::getInstance().getPos("G8", RIGHT_DOWN));
+	ASSERT_EQ("H8", ChessBoard::getInstance().getPos("G7", RIGHT_DOWN));
 
-	ASSERT_EQ("B2", board.getRightDownPos("A1"));
-	ASSERT_EQ("C2", board.getRightDownPos("B1"));
-	ASSERT_EQ("B3", board.getRightDownPos("A2"));
-	ASSERT_EQ("C3", board.getRightDownPos("B2"));
+	ASSERT_EQ("B2", ChessBoard::getInstance().getPos("A1", RIGHT_DOWN));
+	ASSERT_EQ("C2", ChessBoard::getInstance().getPos("B1", RIGHT_DOWN));
+	ASSERT_EQ("B3", ChessBoard::getInstance().getPos("A2", RIGHT_DOWN));
+	ASSERT_EQ("C3", ChessBoard::getInstance().getPos("B2", RIGHT_DOWN));
 }
 
 TEST(TestChessBoard, isInverseTest)
 {
-	ChessBoard board;
-	ASSERT_EQ(false, board.isInverse('B', 'B'));
-	ASSERT_EQ(true, board.isInverse('W', 'B'));
-	ASSERT_EQ(true, board.isInverse('B', 'W'));
-	ASSERT_EQ(false, board.isInverse('W', 'W'));
+	ASSERT_EQ(false, ChessBoard::getInstance().isInverse('B', 'B'));
+	ASSERT_EQ(true, ChessBoard::getInstance().isInverse('W', 'B'));
+	ASSERT_EQ(true, ChessBoard::getInstance().isInverse('B', 'W'));
+	ASSERT_EQ(false, ChessBoard::getInstance().isInverse('W', 'W'));
 }
 

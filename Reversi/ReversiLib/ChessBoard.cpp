@@ -1,136 +1,88 @@
 #include "ChessBoard.h"
 
+#include <algorithm>
+
+std::vector<RouterDirection> ChessBoard::m_leftDirections;
+std::vector<RouterDirection> ChessBoard::m_upDirections;
+std::vector<RouterDirection> ChessBoard::m_rightDirections;
+std::vector<RouterDirection> ChessBoard::m_downDirections;
 
 ChessBoard::ChessBoard(void)
 {
-}
+	ChessBoard::m_leftDirections.push_back(LEFT);
+	ChessBoard::m_leftDirections.push_back(LEFT_DOWN);
+	ChessBoard::m_leftDirections.push_back(LEFT_UP);
 
+	ChessBoard::m_upDirections.push_back(LEFT_UP);
+	ChessBoard::m_upDirections.push_back(RIGHT_UP);
+	ChessBoard::m_upDirections.push_back(UP);
+
+	ChessBoard::m_rightDirections.push_back(RIGHT);
+	ChessBoard::m_rightDirections.push_back(RIGHT_DOWN);
+	ChessBoard::m_rightDirections.push_back(RIGHT_UP);
+
+	ChessBoard::m_downDirections.push_back(DOWN);
+	ChessBoard::m_downDirections.push_back(LEFT_DOWN);
+	ChessBoard::m_downDirections.push_back(RIGHT_DOWN);
+}
 
 ChessBoard::~ChessBoard(void)
 {
 }
 
-
-std::string ChessBoard::getLeftPos(const std::string& strPos)
+ChessBoard& ChessBoard::getInstance()
 {
-	std::string result = "XX";
-	if (strPos[0] == 'A')
-	{
-		return result;
-	}
-	else
-	{
-		result[0] = strPos[0] - 1;
-		result[1] = strPos[1];
-		return result;
-	}
-}
-std::string ChessBoard::getRightPos(const std::string& strPos)
-{
-	std::string result = "XX";
-	if (strPos[0] == 'H')
-	{
-		return result;
-	}
-	else
-	{
-		result[0] = strPos[0] + 1;
-		result[1] = strPos[1];
-		return result;
-	}
+	static ChessBoard board;
+	return board;
 }
 
-std::string ChessBoard::getUpPos(const std::string& strPos)
+std::string ChessBoard::getPos(const std::string& strPos,RouterDirection direction)
 {
-	std::string result = "XX";
-	if (strPos[1] == '1')
+	int iHorizon = 0;
+	int iVertical = 0;
+	std::string strResult = "XX";
+	if (exist(m_leftDirections, direction))
 	{
-		return result;
+		iHorizon = -1;
 	}
-	else
+	else if (exist(m_rightDirections, direction))
 	{
-		result[0] = strPos[0];
-		result[1] = strPos[1] - 1;
-		return result;
+		iHorizon = 1;
 	}
-}
-std::string ChessBoard::getDownPos(const std::string& strPos)
-{
-	std::string result = "XX";
-	if (strPos[1] == '8')
-	{
-		return result;
-	}
-	else
-	{
-		result[0] = strPos[0];
-		result[1] = strPos[1] + 1;
-		return result;
-	}
-}
 
-std::string ChessBoard::getLeftUpPos(const std::string& strPos)
-{
-	std::string result = "XX";
-	if (strPos[1] == '1' || strPos[0] == 'A')
+	if (exist(m_upDirections, direction))
 	{
-		return result;
+		iVertical = -1;
 	}
-	else
+	else if (exist(m_downDirections, direction))
 	{
-		result[0] = strPos[0] - 1;
-		result[1] = strPos[1] - 1;
-		return result;
+		iVertical = 1;
 	}
-}
 
-std::string ChessBoard::getRightUpPos(const std::string& strPos)
-{
-	std::string result = "XX";
-	if (strPos[0] == 'H' || strPos[1] == '1')
+	strResult[0] = strPos[0] + iHorizon;
+	strResult[1] = strPos[1] + iVertical;
+	if (isOutOfBoard(strResult))
 	{
-		return result;
+		strResult = "XX";
 	}
-	else
-	{
-		result[0] = strPos[0] + 1;
-		result[1] = strPos[1] - 1;
-		return result;
-	}
-}
-
-std::string ChessBoard::getLeftDownPos(const std::string& strPos)
-{
-	std::string result = "XX";
-	if (strPos[0] == 'A' || strPos[1] == '8')
-	{
-		return result;
-	}
-	else
-	{
-		result[0] = strPos[0] - 1;
-		result[1] = strPos[1] + 1;
-		return result;
-	}
-}
-
-std::string ChessBoard::getRightDownPos(const std::string& strPos)
-{
-	std::string result = "XX";
-	if (strPos[0] == 'H' || strPos[1] == '8')
-	{
-		return result;
-	}
-	else
-	{
-		result[0] = strPos[0] + 1;
-		result[1] = strPos[1] + 1;
-		return result;
-	}
+	return strResult;
 }
 
 bool ChessBoard::isInverse(char chessColor, char otherChessColor)
 {
 	return (chessColor == 'B' && otherChessColor == 'W' ) 
 		|| (chessColor == 'W' && otherChessColor == 'B' ) ;
+}
+
+bool ChessBoard::isOutOfBoard(const std::string& strPos)
+{
+	return strPos[0] < 'A' || 
+			strPos[0] > 'H'||
+			strPos[1] < '1'|| 
+			strPos[1] > '8';
+}
+
+bool ChessBoard::exist(std::vector<RouterDirection>& directions, RouterDirection direction)
+{
+	return std::find(directions.begin(), directions.end(), direction) != directions.end();
 }

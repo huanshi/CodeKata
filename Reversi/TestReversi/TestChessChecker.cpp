@@ -94,6 +94,7 @@ TEST(TestChessChecker, canPlaceThroughRightTest)
 	ChessChecker checker(chessBoard);
 	ASSERT_EQ(false, checker.canPlace(RIGHT, 'B', "A1"));
 	ASSERT_EQ(true, checker.canPlace(RIGHT, 'B', "C5"));
+	ASSERT_EQ(false, checker.canPlace(RIGHT, 'B', "B5"));
 
 	ASSERT_EQ(false, checker.canPlace(RIGHT, 'W', "A1"));
 	ASSERT_EQ(true, checker.canPlace(RIGHT, 'W', "C4"));

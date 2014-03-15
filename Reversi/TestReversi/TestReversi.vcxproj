@@ -39,7 +39,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\workspace\newProjects\CodeKata\Reversi\ReversiLib;D:\workspace\projects\CommLibrary\trunk\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\WorgeLing\Documents\GitHub\CodeKata\Reversi\ReversiLib;D:\workspace\projects\CommLibrary\trunk\include;$(IncludePath)</IncludePath>
     <LibraryPath>D:\workspace\projects\CommLibrary\trunk\lib\getst\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

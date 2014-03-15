@@ -24,31 +24,10 @@
     <ClInclude Include="ChessBoard.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="AbstractRouter.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="RouterDirection.h">
+      <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="LeftRouter.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="RightRouter.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="UpRouter.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="DownRouter.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LeftUpRouter.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="RightUpRouter.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LeftDownRouter.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="RightDownRouter.h">
+    <ClInclude Include="Router.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,31 +38,7 @@
     <ClCompile Include="ChessBoard.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="AbstractRouter.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LeftRouter.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="RightRouter.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="UpRouter.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="DownRouter.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LeftUpRouter.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="RightUpRouter.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LeftDownRouter.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="RightDownRouter.cpp">
+    <ClCompile Include="Router.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

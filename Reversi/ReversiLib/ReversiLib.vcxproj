@@ -73,30 +73,15 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbstractRouter.h" />
     <ClInclude Include="ChessBoard.h" />
     <ClInclude Include="ChessChecker.h" />
-    <ClInclude Include="DownRouter.h" />
-    <ClInclude Include="LeftDownRouter.h" />
-    <ClInclude Include="LeftRouter.h" />
-    <ClInclude Include="LeftUpRouter.h" />
-    <ClInclude Include="RightDownRouter.h" />
-    <ClInclude Include="RightRouter.h" />
-    <ClInclude Include="RightUpRouter.h" />
-    <ClInclude Include="UpRouter.h" />
+    <ClInclude Include="Router.h" />
+    <ClInclude Include="RouterDirection.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AbstractRouter.cpp" />
     <ClCompile Include="ChessBoard.cpp" />
     <ClCompile Include="ChessChecker.cpp" />
-    <ClCompile Include="DownRouter.cpp" />
-    <ClCompile Include="LeftDownRouter.cpp" />
-    <ClCompile Include="LeftRouter.cpp" />
-    <ClCompile Include="LeftUpRouter.cpp" />
-    <ClCompile Include="RightDownRouter.cpp" />
-    <ClCompile Include="RightRouter.cpp" />
-    <ClCompile Include="RightUpRouter.cpp" />
-    <ClCompile Include="UpRouter.cpp" />
+    <ClCompile Include="Router.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
